@@ -18,8 +18,10 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Text="{Binding Path=Title}"/>
-                        <CheckBox IsChecked="{Binding Path=IsDone}"/>
+                        <TextBlock Text="{Binding Title}"/>
+                        <CheckBox IsChecked="{Binding IsDone, Mode=TwoWay}" 
+                                  Checked="CheckBox_Checked"
+                                  Unchecked="CheckBox_Checked"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
