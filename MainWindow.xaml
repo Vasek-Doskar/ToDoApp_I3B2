@@ -5,24 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoApp_I3B2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        ResizeMode="NoResize"
+        Background="Pink"
+        Title="MainWindow" Height="300" Width="300">
     <Grid>
-        <Label Background="LightGray" 
-               HorizontalAlignment="Left"
-               Margin="252,121,0,0"
-               HorizontalContentAlignment="Center"
-               VerticalContentAlignment="Center"
-               VerticalAlignment="Top"
-               Width="265"
-               Height="57"
-               x:Name="Label"/>
-        
-        <TextBox HorizontalAlignment="Left"
-                 Margin="252,217,0,0"
-                 TextWrapping="Wrap"
-                 VerticalAlignment="Top"
-                 Width="265"
-                 Height="72"
-                 x:Name="TextInput"/>
+        <ListBox x:Name="ToDoListBox" 
+                 Width="280" 
+                 Height="250"
+                 Background="HotPink"
+                 Foreground="White"
+                 >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="{Binding Path=Title}"/>
+                        <CheckBox IsChecked="{Binding Path=IsDone}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
     </Grid>
 </Window>

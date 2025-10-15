@@ -11,13 +11,6 @@ namespace ToDoApp_I3B2.Model
 
         public ToDo() { }
 
-        public ToDo(int id, string title, bool isDone) : this()
-        {
-            Id = id;
-            Title = title;
-            _isDone = isDone;
-        }
-
         public bool IsDone
         {
             get => _isDone;

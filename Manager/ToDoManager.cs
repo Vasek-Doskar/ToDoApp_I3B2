@@ -28,6 +28,16 @@ namespace ToDoApp_I3B2.Manager
         {
             _dbContext.Update(todo);
             _dbContext.SaveChanges();
-        }        
+        }
+        
+        public ToDo GetById(int id)
+        {
+            ToDo? todo = _dbContext.Find<ToDo>(id);
+            if(todo == null) 
+                throw new Exception("Hledaný prvek není v DB");
+            return todo;
+        }
+
+        public IList<ToDo> GetAll() => _dbContext.ToDos.ToList();
     }
 }

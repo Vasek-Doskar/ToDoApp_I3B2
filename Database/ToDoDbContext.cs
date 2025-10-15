@@ -16,5 +16,15 @@ namespace ToDoApp_I3B2.Database
         {
             optionsBuilder.UseSqlite("Data Source = ToDoDb.db");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<ToDo>().HasData(
+                new ToDo { Id = 1, Title = "Nakoupit", IsDone = true },
+                new ToDo { Id = 2, Title = "Uklidit", IsDone = false }
+                );
+
+        }
     }
 }

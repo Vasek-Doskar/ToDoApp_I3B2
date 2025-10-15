@@ -15,6 +15,7 @@ namespace ToDoApp_I3B2
             _manager = new ToDoManager(new ToDoDbContext());
 
             InitializeComponent(); // od tohoto okamžiku je propojeno GUI (PŘIPOJILO TLAČÍTKO)
+            //ToDoListBox.ItemsSource;
 
         }
 
