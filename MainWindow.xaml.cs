@@ -1,8 +1,10 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Controls;
 using ToDoApp_I3B2.Database;
 using ToDoApp_I3B2.Manager;
 using ToDoApp_I3B2.Model;
+using ToDoApp_I3B2.Windows;
 
 namespace ToDoApp_I3B2
 {
@@ -24,8 +26,29 @@ namespace ToDoApp_I3B2
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-
+            if (sender is CheckBox cbox && cbox.DataContext is ToDo todo) 
+            {
+                todo.IsDone = cbox.IsChecked == true;
+                _manager.Update(todo);
+            }
         }
+
+        private void AddNew(object sender, RoutedEventArgs e)
+        {
+            NewTodoWindow newTodoWindow = new(_manager);
+            newTodoWindow.Closed += (s, e) =>
+            {
+                Todos.Clear();
+                _manager.GetAll().ToList().ForEach(todo => Todos.Add(todo));
+            };
+
+            newTodoWindow.ShowDialog();
+        }
+        private void RemoveSelectedTodo(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
     }
 
 }

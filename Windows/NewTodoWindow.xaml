@@ -1,0 +1,44 @@
+﻿<Window x:Class="ToDoApp_I3B2.Windows.NewTodoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoApp_I3B2.Windows"
+        mc:Ignorable="d"
+        Background="HotPink"
+        ResizeMode="NoResize"
+        Title="New ToDo" Height="200" Width="200">
+    <Grid>
+        <Label Content="Title:"
+               Foreground="White"
+               HorizontalAlignment="Left"
+               Margin="13,24,0,0" 
+               VerticalAlignment="Top" RenderTransformOrigin="0.379,0.443"/>
+
+        <TextBox
+                 Margin="53,28,0,0"
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top"
+                 x:Name="TitleInput" HorizontalAlignment="Left" Width="120"/>
+
+        <CheckBox Content="Is Done" 
+                  Foreground="White"
+                  x:Name="IsDoneInput"
+                  HorizontalAlignment="Left"
+                  Margin="53,63,0,0" VerticalAlignment="Top"/>
+
+        <Button Content="Save"
+                Click="SaveTodo"
+                HorizontalAlignment="Left"
+                Margin="13,116,0,0"
+                VerticalAlignment="Top" 
+                Height="28" Width="56"/>
+
+        <Button Content="Cancel"
+                Click="CancelWindow" 
+                Margin="107,116,0,0" 
+                VerticalAlignment="Top" 
+                Height="28" HorizontalAlignment="Left" Width="56"/>
+
+    </Grid>
+</Window>
